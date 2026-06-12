@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - PadelReserve</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR BOOTSTRAP -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+    <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand fw-bold fs-5" href="index.html">PadelReserve</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav gap-1">
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active fw-semibold text-dark" href="booking.html">Booking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="login.html">Login Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="dashboard.html">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- BOOKING FORM SECTION -->
+<section class="py-5 px-4 px-lg-5">
+    <div class="row g-5">
+
+        <!-- LEFT: FORM -->
+        <div class="col-12 col-lg-8">
+            <p class="text-uppercase text-muted small fw-semibold">Reservation Flow</p>
+            <h1 class="fw-bold mb-4">Book Your Court.</h1>
+
+            <!-- FORM BOOTSTRAP -->
+            <div class="mb-4">
+                <h6 class="fw-bold text-uppercase small mb-3">01 &mdash; Personal Details</h6>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control rounded-0 bg-light border-0 py-3" placeholder="Nama Lengkap">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control rounded-0 bg-light border-0 py-3" placeholder="Nomor HP">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h6 class="fw-bold text-uppercase small mb-3">02 &mdash; Court &amp; Schedule</h6>
+
+                <!-- COURT BUTTONS -->
+                <div class="d-flex gap-2 mb-3 flex-wrap">
+                    <button type="button" class="btn btn-dark rounded-0 px-4 court-pick active-pick" data-court="A">Court A</button>
+                    <button type="button" class="btn btn-outline-dark rounded-0 px-4 court-pick" data-court="B">Court B</button>
+                    <button type="button" class="btn btn-outline-dark rounded-0 px-4 court-pick" data-court="C">Court C</button>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="date" class="form-control rounded-0 bg-light border-0 py-3">
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-select rounded-0 bg-light border-0 py-3">
+                            <option>08:00 - 09:30</option>
+                            <option>09:30 - 11:00</option>
+                            <option>11:00 - 12:30</option>
+                            <option>13:00 - 14:30</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMAGE PLACEHOLDER -->
+            <div class="court-img-placeholder d-flex align-items-center justify-content-center text-muted small border border-2">
+                COURT PREVIEW
+            </div>
+        </div>
+
+        <!-- RIGHT: SUMMARY CARD -->
+        <div class="col-12 col-lg-4">
+            <div class="card border-0 rounded-0 bg-light p-4 h-auto sticky-top" style="top: 80px;">
+                <p class="text-uppercase text-muted small fw-semibold mb-3">Ringkasan Booking</p>
+
+                <p class="mb-2"><strong>Lapangan:</strong> Court A</p>
+                <p class="mb-2"><strong>Tanggal:</strong> -</p>
+                <p class="mb-3"><strong>Waktu:</strong> -</p>
+
+                <hr class="my-3">
+                <h4 class="fw-bold mb-4">IDR 250.000</h4>
+
+                <button class="btn btn-dark w-100 rounded-0 py-3 fw-semibold" id="confirmBtn">KONFIRMASI BOOKING</button>
+
+                <div class="mt-3 p-3 bg-white border">
+                    <small class="text-muted">* Pembayaran dilakukan di tempat saat check-in</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- HISTORY SECTION -->
+<section class="py-5 px-4 px-lg-5 border-top mt-3">
+    <h2 class="fw-bold mb-1">RIWAYAT BOOKING</h2>
+    <p class="text-muted mb-4">Daftar lengkap reservasi lapangan padel Anda.</p>
+
+    <!-- STATS CARDS: BOOTSTRAP GRID -->
+    <div class="row g-3 mb-4">
+        <div class="col-6 col-md-3">
+            <div class="card rounded-0 border-0 bg-dark text-white p-4">
+                <small class="text-uppercase opacity-75 small">Total Booking</small>
+                <h2 class="fw-bold mt-2 mb-0">24</h2>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card rounded-0 border-0 bg-light p-4">
+                <small class="text-uppercase text-muted small">Status Aktif</small>
+                <h2 class="fw-bold mt-2 mb-0">02</h2>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card rounded-0 border-0 bg-light p-4">
+                <small class="text-uppercase text-muted small">Selesai</small>
+                <h2 class="fw-bold mt-2 mb-0">22</h2>
+            </div>
+        </div>
+        <div class="col-6 col-md-3">
+            <div class="card rounded-0 border-0 border border-2 p-4 d-flex align-items-center justify-content-center">
+                <span class="text-muted small">MEDIA</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABLE BOOTSTRAP -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th class="fw-semibold">Nama</th>
+                    <th class="fw-semibold">Lapangan</th>
+                    <th class="fw-semibold">Tanggal</th>
+                    <th class="fw-semibold">Jam</th>
+                    <th class="fw-semibold">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ananda Rizky</td>
+                    <td>Court Alpha</td>
+                    <td>12 Okt</td>
+                    <td>18:00 - 20:00</td>
+                    <td><span class="badge bg-dark rounded-0 px-2 py-1">AKTIF</span></td>
+                </tr>
+                <tr>
+                    <td>Dimas</td>
+                    <td>Court Beta</td>
+                    <td>10 Okt</td>
+                    <td>07:00 - 09:00</td>
+                    <td><span class="badge bg-secondary rounded-0 px-2 py-1">SELESAI</span></td>
+                </tr>
+                <tr>
+                    <td>Budi</td>
+                    <td>Court Alpha</td>
+                    <td>08 Okt</td>
+                    <td>19:00 - 21:00</td>
+                    <td><span class="badge bg-secondary rounded-0 px-2 py-1">SELESAI</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Court picker
+    const courtPicks = document.querySelectorAll(".court-pick");
+    courtPicks.forEach(btn => {
+        btn.addEventListener("click", function () {
+            courtPicks.forEach(b => {
+                b.classList.remove("btn-dark", "active-pick");
+                b.classList.add("btn-outline-dark");
+            });
+            this.classList.remove("btn-outline-dark");
+            this.classList.add("btn-dark", "active-pick");
+        });
+    });
+
+    // Confirm booking
+    document.getElementById("confirmBtn").addEventListener("click", () => {
+        alert("Booking berhasil dikonfirmasi!");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+/* ===========================
+   PadelReserve Bootstrap Theme
+   Custom CSS (pelengkap Bootstrap)
+=========================== */
+
+/* Typography */
+* {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar brand */
+.navbar-brand {
+    letter-spacing: -0.5px;
+}
+
+/* ---- HERO SECTION ---- */
+.hero-section {
+    background-color: #ededed;
+}
+
+.hero-line {
+    width: 60px;
+    height: 3px;
+    background: black;
+    margin-top: 20px;
+}
+
+.hero-img-placeholder {
+    width: 100%;
+    max-width: 480px;
+    height: 260px;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.hero-img-placeholder::before,
+.hero-img-placeholder::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #ccc;
+    top: 50%;
+}
+
+.hero-img-placeholder::before {
+    transform: rotate(45deg);
+}
+
+.hero-img-placeholder::after {
+    transform: rotate(-45deg);
+}
+
+/* ---- SLOT CARDS ---- */
+.slot-card {
+    border-radius: 0 !important;
+    cursor: pointer;
+    transition: 0.2s ease;
+    min-height: 80px;
+    font-size: 12px;
+}
+
+.slot-card:hover:not(.booked) {
+    transform: scale(1.03);
+    border-color: black !important;
+}
+
+.slot-card.booked {
+    cursor: not-allowed;
+    color: #aaa;
+    background: #fafafa;
+}
+
+.slot-card.selected {
+    background: black !important;
+    color: white !important;
+}
+
+/* ---- BOOKING PAGE ---- */
+.court-img-placeholder {
+    height: 200px;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+}
+
+/* ---- LOGIN PAGE ---- */
+.login-img-placeholder {
+    width: 100%;
+    height: 440px;
+    background: #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-img-placeholder::before,
+.login-img-placeholder::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #bbb;
+    top: 50%;
+}
+
+.login-img-placeholder::before {
+    transform: rotate(45deg);
+}
+
+.login-img-placeholder::after {
+    transform: rotate(-45deg);
+}
+
+/* ---- FORM INPUTS STYLE ---- */
+.form-control:focus,
+.form-select:focus {
+    background-color: #e9e9e9;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.15);
+    border-color: #000;
+}
+
+/* ---- TABLE ---- */
+.table thead th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: #f8f8f8;
+    font-weight: 600;
+}
+
+/* ---- UTILITIES ---- */
+.letter-wide {
+    letter-spacing: 1px;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 576px) {
+    h1.display-4 {
+        font-size: 2rem;
+    }
+
+    .hero-section {
+        padding: 40px 20px;
+    }
+}
